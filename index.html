@@ -6,8 +6,8 @@
     <title>FreeSpanishFlashcards</title>
 
     <link rel="stylesheet" href="home.css">
-    <link rel="icon" type="image/png" href="tacoicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="fonts">
+    <link rel="icon" type="image/png" href="images/tacoicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
     <style>
         html, body {
@@ -26,12 +26,12 @@
     </style>
 </head>
 <body>
-    <h1>
+    <h1 id="title">
         free spanish flashcards :)
     </h1>
-    <hr>
+    <hr style="margin-top: 0px;">
     <form id="backdoor">
-      <p>Backdoor</p>
+      <div style="padding-bottom: 3px;">Admin Backdoor</div>
       <input type="text" placeholder="password">
     </form>
 
@@ -40,9 +40,9 @@
     <button onclick="removeIframe()" type="minecraft">stop</button>
 
     <form action="" method="post">
-      <label for="custom">custom label</label>
+      <label for="custom">custom website</label>
       <input type="text" id="custom" custom="custom" placeholder="URL">
-      <button type="submit">play</button>
+      <button type="submit">load</button>
     </form>
 
     <div id="iframe-container"></div>
