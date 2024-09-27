@@ -19,4 +19,5 @@ function removeIframe() {
     if (iframe) {
         iframe.remove();
     }
+    
 }

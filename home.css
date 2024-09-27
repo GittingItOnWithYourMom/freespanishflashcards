@@ -8,7 +8,7 @@ body{
     padding-top: 10px;
     margin: 0px
 }
-#backdoor{
+#backdoor {
     background-color: white;
     border: 3px solid black;
     padding: 7px;
@@ -16,4 +16,14 @@ body{
     width: 180px;
     border-radius: 5px;
     margin-right:6px;
+}
+
+a:link {
+    color: cyan;
+}
+a:hover {
+    color: rgb(179, 255, 255);
+}
+a:visited {
+    color: rgb(0, 169, 169);
 }
