@@ -18,6 +18,7 @@ function removeIframe() {
     if (iframe) {
         iframe.remove();
     }
+    
 }
 function custom(){
     var customurl = document.getElementById('custom').value;

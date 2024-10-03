@@ -40,11 +40,11 @@
   <button id="minecraft" onclick="start('minecraft')">play</button>
   <button onclick="removeIframe()">stop</button>
 
-  <br>
-
-  <label for="custom">custom website</label>
-  <input type="text" id="custom" custom="custom" placeholder="URL">
-  <button onclick="custom()">load</button>
+    <form action="" method="post">
+      <label for="custom">custom website</label>
+      <input type="text" id="custom" custom="custom" placeholder="URL">
+      <button type="submit">load</button>
+    </form>
 
   <div id="iframe-container"></div>
 </body>
