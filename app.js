@@ -37,6 +37,20 @@ function custom(){
     };
 }
 
+var AdminUser = false
+function adminlog(){
+    print(KeyboardEvent)
+    var pass = document.getElementById('adminpass').value
+    var text = document.getElementById('admintext').textContent
+    if (pass == 'diddy'){
+        text = 'Welcome Admin'
+        AdminUser = true
+    }
+    else{
+        text = 'Wrong Password'
+    }
+}
+
 function spin(){
     document.getElementById('settings').style.animation = '2s ease-out 0s running spin';
 }
