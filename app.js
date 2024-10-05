@@ -1,7 +1,7 @@
 const theme = document.getElementById("theme")
 const body = document.body
 const darktext = document.querySelectorAll(".darkmode")
-
+const backdoor = document.getElementById('backdoor')
 
 function start(game){
     removeIframe()
@@ -45,31 +45,41 @@ function custom(){
 }
 
 var AdminUser = false
-function adminlog(){
-    console.log('yo')
-    var pass = document.getElementById('adminpass').value
-    var text = document.getElementById('admintext').textContent
-    if (pass == 'diddy'){
-        text = 'Welcome Admin'
+backdoor.addEventListener('submit',function(event){
+    event.preventDefault()
+
+    var pass = document.getElementById('adminpass')
+    var text = document.getElementById('admintext')
+    if (pass.value == 'oppenheimer2'){
+        pass.value = ''
+        pass.hidden = true
+        backdoor.style.width = '110px'
+        text.style.color = 'green'
+        text.textContent = 'Welcome Admin'
         AdminUser = true
     }
     else{
-        console.log('nope')
-        text = 'Wrong Password'
+        pass.value = ''
+        text.textContent = 'Wrong Password'
+        text.style.color = 'red'
+        setTimeout(function(){
+            text.textContent = 'Admin Backdoor'
+            text.style.color = 'black'
+        }, 2000)
     }
-}
+})
 
 function changetheme(){
     if(theme.checked){
-        body.style.backgroundColor = 'rgb(70, 70, 70)';
+        body.style.backgroundColor = 'rgb(70, 70, 70)'
         darktext.forEach((text) => {
-            text.style.color = 'white';    
-        });
+            text.style.color = 'white'
+        })
     }
     else{
-        body.style.backgroundColor = 'white';
+        body.style.backgroundColor = 'white'
         darktext.forEach((text) => {
-            text.style.color = 'black';    
-        });
+            text.style.color = 'black';   
+        })
     }
 }
