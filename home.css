@@ -1,5 +1,8 @@
 body{
-    background-color: rgb(66, 66, 66);
+    background-color: white;
+}
+.darkmode{
+    color: black;
 }
 #title {
     background-color: yellow;
@@ -16,4 +19,14 @@ body{
     width: 180px;
     border-radius: 5px;
     margin-right:6px;
+}
+#theme {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+#themelabel{
+    right: 32px;
+    position: absolute;
+    top: 5px;
 }

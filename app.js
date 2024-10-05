@@ -1,4 +1,10 @@
+const theme = document.getElementById("theme")
+const body = document.body
+const darktext = document.querySelectorAll(".darkmode")
+
+
 function start(game){
+    removeIframe()
     var iframe = document.createElement('iframe');
     iframe.width = '1920'
     iframe.height = '1080'
@@ -21,6 +27,7 @@ function removeIframe() {
     
 }
 function custom(){
+    removeIframe()
     var customurl = document.getElementById('custom').value;
     console.log(customurl);
     var iframe = document.createElement('iframe');
@@ -39,7 +46,7 @@ function custom(){
 
 var AdminUser = false
 function adminlog(){
-    print(KeyboardEvent)
+    console.log('yo')
     var pass = document.getElementById('adminpass').value
     var text = document.getElementById('admintext').textContent
     if (pass == 'diddy'){
@@ -47,10 +54,22 @@ function adminlog(){
         AdminUser = true
     }
     else{
+        console.log('nope')
         text = 'Wrong Password'
     }
 }
 
-function spin(){
-    document.getElementById('settings').style.animation = '2s ease-out 0s running spin';
+function changetheme(){
+    if(theme.checked){
+        body.style.backgroundColor = 'rgb(70, 70, 70)';
+        darktext.forEach((text) => {
+            text.style.color = 'white';    
+        });
+    }
+    else{
+        body.style.backgroundColor = 'white';
+        darktext.forEach((text) => {
+            text.style.color = 'black';    
+        });
+    }
 }

@@ -26,25 +26,26 @@
     </style>
 </head>
 <body>
-  <img onclick="spin()" id="settings" src="images/settings.png" alt="settings">
+  <label id="themelabel" for="theme">darkmode</label>
+  <input onclick="changetheme()" id="theme" type="checkbox">
   <h1 id="title">
       free spanish flashcards :)
   </h1>
   <hr style="margin-top: 0px;">
+
   <form id="backdoor">
     <div id="admintext" style="padding-bottom: 3px;">Admin Backdoor</div>
-    <input onkeypress="adminlog()" id="adminpass" type="text" placeholder="password">
+    <input onsubmit="adminlog()" id="adminpass" type="text" placeholder="password">
   </form>
 
-  <label for="minecraft">minecraft 1.8.8</label>
+  <label class="darkmode" for="minecraft">minecraft 1.8.8</label>
   <button id="minecraft" onclick="start('minecraft')">play</button>
   <button onclick="removeIframe()">stop</button>
 
-    <form action="" method="post">
-      <label for="custom">custom website</label>
-      <input type="text" id="custom" custom="custom" placeholder="URL">
-      <button type="submit">load</button>
-    </form>
+  <br>
+  <label class="darkmode" for="custom">custom website</label>
+  <input type="text" id="custom" custom="custom" placeholder="URL">
+  <button onclick="custom()" type="submit">load</button>
 
   <div id="iframe-container"></div>
 </body>
