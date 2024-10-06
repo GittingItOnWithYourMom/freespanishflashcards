@@ -56,6 +56,7 @@ backdoor.addEventListener('submit',function(event){
         backdoor.style.width = '110px'
         text.style.color = 'green'
         text.textContent = 'Welcome Admin'
+        body.style.backgroundImage = "url('images/school_picture3.jpg')"
         AdminUser = true
     }
     else{
