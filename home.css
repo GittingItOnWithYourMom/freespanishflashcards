@@ -1,5 +1,6 @@
 body{
     background-color: white;
+    height: 3000px;
 }
 .darkmode{
     color: black;
@@ -10,6 +11,9 @@ body{
     padding: 10px;
     padding-top: 10px;
     margin: 0px
+}
+#ball{
+    position: absolute;
 }
 #backdoor {
     background-color: white;

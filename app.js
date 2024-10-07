@@ -2,6 +2,7 @@ const theme = document.getElementById("theme")
 const body = document.body
 const darktext = document.querySelectorAll(".darkmode")
 const backdoor = document.getElementById('backdoor')
+const ball = document.getElementById('ball')
 
 function start(game){
     removeIframe()
@@ -84,3 +85,59 @@ function changetheme(){
         })
     }
 }
+
+function hideball(){
+    ball.remove()
+}
+
+//physics
+var framerate = 10
+var bottom = 845
+var wall = 1802
+var physics_objects = [ball]
+var deltaTX = 0
+var deltaTY = 0
+var posY = 0
+var posX = 0
+var initialY = 0
+var initialX = 0
+var friction = 0
+setInterval(() => {
+    physics_objects.forEach((object) => {
+        //Y
+        if (posY < bottom + scrollY){
+            friction = 1
+            var accY = 4.8
+            var velY = 0
+            posY = initialY + velY*deltaTY + accY*deltaTY*deltaTY * 0.01
+            
+            var amount = "translate(" +0+ "px, " +posY+ "px)"
+            object.style.transform = amount
+            deltaTY += 1
+        }
+        else{
+            friction = 0.001
+            deltaTY = 0
+            initialY = posY
+            posY = bottom + scrollY
+            var amount = "translate(" +0+ "px, " +posY+ "px)"
+            object.style.transform = amount
+        }
+        //X
+        if (posX < wall){
+            var accX = 0
+            var velX = 4
+            posX = initialX + velX*deltaTX + accX*deltaTX*deltaTX
+            var amount = "translate(" +posX+ "px, " +posY+ "px)"
+            object.style.transform = amount
+            deltaTX += 1
+        }
+        else{
+            deltaTX = 0
+            initialX = posX
+            posX = wall
+            var amount = "translate(" +posX+ "px, " +posY+ "px)"
+            object.style.transform = amount
+        }
+    })
+}, framerate)

@@ -26,6 +26,7 @@
     </style>
 </head>
 <body>
+  <img id="ball" src="images/ball.png" alt="greenball">
   <label id="themelabel" for="theme">darkmode</label>
   <input onclick="changetheme()" id="theme" type="checkbox">
   <h1 id="title">
@@ -45,7 +46,10 @@
   <label class="darkmode" for="custom">custom website</label>
   <input type="text" id="custom" custom="custom" placeholder="URL">
   <button onclick="custom()" type="submit">load</button>
-  
+  <br>
+  <br>
+  <button onclick="hideball()">remove ball</button>
+
   <div id="iframe-container"></div>
 </body>
 
