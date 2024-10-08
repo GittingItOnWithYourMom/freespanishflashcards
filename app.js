@@ -46,6 +46,34 @@ function custom(){
     };
 }
 
+
+
+var combo = ''
+document.addEventListener('keypress', (event) => {
+    console.log(event.value)
+    if (value == g)
+        combo = combo + 'g'
+    if (value == g)
+        combo = combo + 'l'
+    if (value == g)
+        combo = combo + 'i'
+    if (value == g)
+        combo = combo + 'z'
+    if (value == g)
+        combo = combo + 'y'
+    if (combo.includes('glizzy')){
+        pass.value = ''
+        pass.hidden = true
+        backdoor.style.width = '110px'
+        text.style.color = 'green'
+        text.textContent = 'Welcome Admin'
+        body.style.backgroundImage = "url('images/school_picture3.jpg')"
+        AdminUser = true
+    }
+        
+
+})
+
 var AdminUser = false
 backdoor.addEventListener('submit',function(event){
     event.preventDefault()
