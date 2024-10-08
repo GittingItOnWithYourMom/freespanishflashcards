@@ -26,7 +26,8 @@
     </style>
 </head>
 <body>
-  <img id="ball" src="images/ball.png" alt="greenball">
+  <img ondragend="moveobject()" id="ball" src="images/ball.png">
+  <div id="box"></div>
   <label id="themelabel" for="theme">darkmode</label>
   <input onclick="changetheme()" id="theme" type="checkbox">
   <h1 id="title">

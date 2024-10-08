@@ -10,10 +10,11 @@ body{
     font-family: Comic Neue;
     padding: 10px;
     padding-top: 10px;
-    margin: 0px
+    margin: 0px;
 }
 #ball{
     position: absolute;
+    z-index: 0;
 }
 #backdoor {
     background-color: white;
@@ -33,4 +34,11 @@ body{
     right: 32px;
     position: absolute;
     top: 5px;
+}
+#box{
+    position: absolute;
+    background-color: greenyellow;
+    height: 100px;
+    width: 100px;
+    z-index: 0;
 }
