@@ -1,7 +1,6 @@
 const theme = document.getElementById("theme")
 const body = document.body
 const darktext = document.querySelectorAll(".darkmode")
-const backdoor = document.getElementById('backdoor')
 const ballimage = document.getElementById('ball')
 const boximage = document.getElementById('box')
 
@@ -48,25 +47,19 @@ function custom(){
 
 
 
-var combo = ''
+var combo = '' 
 document.addEventListener('keypress', (event) => {
-    console.log(event.value)
-    if (value == g)
+    if (event.key == 'g')
         combo = combo + 'g'
-    if (value == g)
+    if (event.key == 'l')
         combo = combo + 'l'
-    if (value == g)
+    if (event.key == 'i')
         combo = combo + 'i'
-    if (value == g)
+    if (event.key == 'z')
         combo = combo + 'z'
-    if (value == g)
+    if (event.key == 'y')
         combo = combo + 'y'
-    if (combo.includes('glizzy')){
-        pass.value = ''
-        pass.hidden = true
-        backdoor.style.width = '110px'
-        text.style.color = 'green'
-        text.textContent = 'Welcome Admin'
+    if (combo.includes('')){
         body.style.backgroundImage = "url('images/school_picture3.jpg')"
         AdminUser = true
     }
@@ -75,30 +68,6 @@ document.addEventListener('keypress', (event) => {
 })
 
 var AdminUser = false
-backdoor.addEventListener('submit',function(event){
-    event.preventDefault()
-
-    var pass = document.getElementById('adminpass')
-    var text = document.getElementById('admintext')
-    if (pass.value == 'oppenheimer2'){
-        pass.value = ''
-        pass.hidden = true
-        backdoor.style.width = '110px'
-        text.style.color = 'green'
-        text.textContent = 'Welcome Admin'
-        body.style.backgroundImage = "url('images/school_picture3.jpg')"
-        AdminUser = true
-    }
-    else{
-        pass.value = ''
-        text.textContent = 'Wrong Password'
-        text.style.color = 'red'
-        setTimeout(function(){
-            text.textContent = 'Admin Backdoor'
-            text.style.color = 'black'
-        }, 2000)
-    }
-})
 
 function changetheme(){
     if(theme.checked){
@@ -159,7 +128,6 @@ setInterval(() => {
     prevWindow = newWindow
     newWindow = innerHeight
     var accWindow = innerHeight - prevWindow
-    console.log(accWindow);
 
     physics_objects.forEach((object) => {
         var bottom = window.innerHeight - 105
@@ -175,17 +143,17 @@ setInterval(() => {
             object.accY -= object.accY
             object.velY -= object.velY
             object.deltaTY = 0
+            if (accBorder < 0){
+                offset += accBorder
+            }
+            if (accWindow < 0){
+                offset += accWindow
+            }
         }
         if (object.posX > wall){
             object.accX -= object.accX
             object.velX -= object.velX
             object.deltaTX = 0
-        }
-        if (accBorder < 0){
-            offset += accBorder
-        }
-        if (accWindow < 0){
-            offset += accWindow
         }
         object.posY = object.initialY + object.velY*object.deltaTY*limiter + object.accY*object.deltaTY*object.deltaTY*limiter + offset
         object.posX = object.initialX + object.velX*object.deltaTX*limiter + object.accX*object.deltaTX*object.deltaTX*limiter
