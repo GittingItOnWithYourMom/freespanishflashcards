@@ -49,17 +49,13 @@ function custom(){
 
 var combo = '' 
 document.addEventListener('keypress', (event) => {
-    if (event.key == 'g')
-        combo = combo + 'g'
-    if (event.key == 'l')
-        combo = combo + 'l'
+    if (event.key == 'd')
+        combo = combo + 'd'
     if (event.key == 'i')
         combo = combo + 'i'
-    if (event.key == 'z')
-        combo = combo + 'z'
     if (event.key == 'y')
         combo = combo + 'y'
-    if (combo.includes('')){
+    if (combo.includes('diddy')){
         body.style.backgroundImage = "url('images/school_picture3.jpg')"
         AdminUser = true
     }
